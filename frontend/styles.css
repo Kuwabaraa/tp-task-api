@@ -1,0 +1,213 @@
+:root {
+    --blue: rgb(75, 123, 185);
+    --black: rgba(0, 0, 0, 0.482);
+    --validate: var(--blue);
+}
+
+* {
+    margin:0;
+    padding:0;
+    box-sizing: content-box;
+}
+
+body {
+    background-color: rgba(0, 0, 0, 1);
+    position:relative;
+}
+
+.container {
+    display:flex;
+    align-items: center;
+    height:100vh;
+    flex-direction: column;
+}
+
+.users {
+    min-width:1200px;
+    display:grid;
+    grid-auto-rows: minmax(300px, auto);
+    grid-gap:50px;
+}
+
+.user_list {
+    grid-column: 1/1;
+    grid-row:1/3;
+    width: 500px;
+    max-height: 700px;
+    overflow: scroll;
+    scrollbar-color: black var(--blue);
+}
+
+ .taskToDo_list {
+    grid-column: 2;
+    grid-row:1/2;
+    width:900px;
+} 
+
+ .taskAchieve_list {
+    grid-column: 2;
+    grid-row:2;
+    width:900px;
+} 
+
+.user_list, .taskAchieve_list, .taskToDo_list {
+    background-color: rgba(255, 255, 255, 0.07);
+    border:solid 1px white;
+}
+
+ul {
+    padding:20px;  
+}
+
+li {
+    color:white;
+    margin:5px;
+    list-style: none;
+    font-size:25px;
+}
+
+h2 {
+    margin:5px 5px 20px 5px;
+    font-size: 35px;
+    background-color: var(--blue);
+    text-align: center;
+    padding:4px;
+    color:white
+}
+
+.menu {
+    display:none;
+    position: absolute;
+    height:100%;
+    width: 500px;
+    background-color: var(--blue);
+    top:0;
+    right:0;
+    padding:50px;
+    animation: menu 1.5s ease-in-out backwards;
+    overflow-x: hidden;
+}
+
+.param {
+    position: absolute;
+    top:3%;
+    right:1%;
+    padding:8px;
+    border: solid 2px --blue;
+    background-color: transparent;
+    color:white;
+    width:100px;
+}
+
+.param:hover {
+    background-color: var(--blue);
+}
+
+svg {
+    display:none;
+    position:absolute;
+    width:70px;
+    height:60px;
+    right:50px;
+}
+
+.menu_root {
+    font-size:24px;
+    color:white;
+}
+
+.container_task, .container_user {
+    display:flex;
+    justify-content:space-evenly;
+    flex-direction: column;
+    padding:10px;
+    margin:20px;
+    height:25vh;;
+    border:solid 1px white;
+}
+
+.container_task {
+    border-left:1px;
+    border-top:1px;
+}
+
+.container_user {
+    border-right:1px;
+    border-bottom:1px;
+}
+
+.menu input, button{
+    width: 250px;
+    padding:10px;
+    margin:4px;
+    font-size:16px;
+    border-radius: 5px;
+    border:none;
+    color:black;
+}
+
+.menu input::placeholder {
+    text-align: center;
+    outline: none;
+}
+
+.menu input:placeholder{
+    background-color: black;
+
+}
+
+.success {
+    background-color: var(--validate);
+}
+
+.error {
+    border: solid 2px red;
+    background-color: red;
+}
+
+
+span {
+    font-size:25px;
+    color: rgb(0, 0, 0);
+    font-weight: 650;
+}
+
+.search {  
+    width: 500px;
+    padding:15px;
+    text-align: center;
+    font-size: 20px;
+    border-radius: 20px;
+    border:none;
+}
+
+#recherche {
+    display:flex;
+    justify-content:  center;
+    min-height:200px;
+    align-items: center;
+}
+
+button {
+    background-color: white;
+    cursor: pointer;
+}
+
+.state {
+    padding:20px;
+    position:absolute;
+    width: 250px;
+    height: 100px;
+    font-size:20px;
+    color:rgb(255, 255, 255);
+    border:  solid 1px rgb(255, 255, 255);
+    left:30px;
+    display:flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.divsuccess {
+    background-color: var(--validate);
+    color:black;
+}
