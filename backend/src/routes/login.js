@@ -18,8 +18,7 @@ module.exports = (app) => {
           const message = `Le mot de passe est incorrect.`
           return res.status(401).json({message})
         }
-
-        // Générer un jeton JWT valide pendant 24 heures.
+        
         const token = jwt.sign(
           { userId: logs.id },
           privateKey,
