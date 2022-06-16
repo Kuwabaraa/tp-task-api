@@ -30,7 +30,7 @@ btnClose.addEventListener('click', function () {
     }
 })
 
-// Step 2 : "Get JWT token 🔓"
+
 fetch("http://localhost:4000/api/login", {
   method: "POST",
   body: JSON.stringify({ username: "root", password: "coucou" }),
@@ -40,7 +40,6 @@ fetch("http://localhost:4000/api/login", {
   .then((res) => res.token)
   .then((token) => fetchUserslist(token));
 
-// Step 3 : "Get pokemon list 🎉"
 const fetchUserslist = (token) => {
   fetch("http://localhost:4000/api/users", {
     headers: { Authorization: `Bearer ${token}` }
@@ -52,6 +51,6 @@ const fetchUserslist = (token) => {
            app.addUser(token)
            return app.Globalusers(token, data.data)          
     }).then(data => console.log(data))
-    // .then((res) => getUsers(res.data, document.querySelector('.user_list')));
+
 };
 
